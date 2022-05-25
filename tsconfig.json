@@ -1,0 +1,56 @@
+{
+  "compilerOptions": {
+    // 目标代码(ts -> js, esnext es6 以上版本，babel 帮忙转化)
+    "target": "esnext",
+    // 目标代码需要使用的模块化方案(es module, import/export)
+    "module": "esnext",
+    // 严格模式
+    "strict": true,
+    // 对jsx进行怎么样的处理 preserve 维持
+    "jsx": "preserve",
+    // 按照node的方式去解析模块（node有自己的文件查找规则 import 'xxx/index.js/.node'）
+    "moduleResolution": "node",
+    // 跳过一些库的类型检测 如：axios...第三方库
+    "skipLibCheck": true,
+    // ESModule 和 CommonJS 互操作，以下两个模块一起使用
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    // 设置为true时,将强制区分大小写。默认为false
+    "forceConsistentCasingInFileNames": true,
+    "useDefineForClassFields": true,
+    // 要不要生成映射文件(ts -> js)
+    "sourceMap": true,
+    "experimentalDecorators": true,
+    // 文件路径在解析时，基本url
+    "baseUrl": ".",
+    // 指定具体要解析使用的类型
+    "types": [
+      "webpack-env"
+    ],
+    // 路径解析，类型 webpack alias
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    },
+    // 可以指定在项目中可以使用哪里库的类型(Proxy/Window/Document)
+    "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable",
+      "scripthost"
+    ]
+  },
+  // 检测哪些文件
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "tests/**/*.ts",
+    "tests/**/*.tsx"
+  ],
+  // 忽略哪些文件
+  "exclude": [
+    "node_modules"
+  ]
+}
